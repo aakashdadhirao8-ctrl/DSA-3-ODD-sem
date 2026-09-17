@@ -1,1 +1,37 @@
-T2,qwerty,12,,,true,NONE,0
+T3,Wireframe Mockups,168,,T2,false,TIMER,1790231068168
+T4,System Architecture Design,336,,T2,false,TIMER,1790835868168
+T5,Angel Investor Pitch Deck,168,,T2,false,TIMER,1790231068169
+T6,Secure Cloud Hosting Setup,72,,T4,false,TIMER,1789885468169
+T7,Database Schema Design,168,,T4,false,TIMER,1790231068169
+T8,API Gateway Config,168,,T4,false,TIMER,1790231068169
+T9,Core Logic Implementation,720,,T7;T8,false,TIMER,1792218268169
+T10,User Authentication Module,168,,T9,false,TIMER,1790231068169
+T11,Payment Processing Integration,336,,T10,false,TIMER,1790835868169
+T12,Gamification Mechanics,336,,T9,false,TIMER,1790835868169
+T13,Experience Point Engine,168,,T12,false,TIMER,1790231068169
+T14,Dashboard UI Development,720,,T3;T9,false,TIMER,1792218268169
+T15,Dark Mode Aesthetic,72,,T14,false,TIMER,1789885468169
+T16,Hover Animations & Polishing,168,,T14,false,TIMER,1790231068169
+T17,Unit Testing Setup,168,,T9,false,TIMER,1790231068169
+T18,Integration Testing,336,,T17;T10;T11,false,TIMER,1790835868169
+T19,Vulnerability & Pen Testing,336,,T18,false,TIMER,1790835868169
+T20,Bug Fixing & Patching,168,,T19,false,TIMER,1790231068169
+T21,Seed Funding Meetings,720,,T5,false,TIMER,1792218268169
+T23,Trademark Registration,720,,T22,false,TIMER,1792218268169
+T24,Marketing Strategy Plan,168,,T2,false,TIMER,1790231068169
+T25,Social Media Teasers,168,,T24,false,TIMER,1790231068169
+T26,Landing Page Launch,72,,T14;T24,false,TIMER,1789885468169
+T27,Email List Building,336,,T26,false,TIMER,1790835868169
+T28,Beta User Onboarding,168,,T18;T26,false,TIMER,1790231068169
+T29,Beta Feedback Collection,168,,T28,false,TIMER,1790231068169
+T30,Iterative UI Improvements,168,,T29;T16,false,TIMER,1790231068169
+T31,Performance Optimization,336,,T30,false,TIMER,1790835868169
+T32,Containerization (Docker),168,,T31,false,TIMER,1790231068169
+T33,CI/CD Pipeline Creation,168,,T32,false,TIMER,1790231068170
+T34,Staging Deployment,72,,T33,false,TIMER,1789885468170
+T35,Production Environment Setup,168,,T34,false,TIMER,1790231068170
+T36,Final QA Sign-off,72,,T35,false,TIMER,1789885468170
+T37,Press Release Distribution,72,,T24;T36,false,TIMER,1789885468170
+T38,Product Hunt Launch,72,,T36;T27,false,TIMER,1789885468170
+T39,Live Demo Day Presentation,72,,T38;T21,false,TIMER,1789885468170
+T40,Post-Launch Analytics Review,168,,T39,false,TIMER,1790231068170

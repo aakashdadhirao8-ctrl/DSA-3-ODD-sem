@@ -1,37 +1,100 @@
-T3,Wireframe Mockups,168,,T2,false,TIMER,1790231068168
-T4,System Architecture Design,336,,T2,false,TIMER,1790835868168
-T5,Angel Investor Pitch Deck,168,,T2,false,TIMER,1790231068169
-T6,Secure Cloud Hosting Setup,72,,T4,false,TIMER,1789885468169
-T7,Database Schema Design,168,,T4,false,TIMER,1790231068169
-T8,API Gateway Config,168,,T4,false,TIMER,1790231068169
-T9,Core Logic Implementation,720,,T7;T8,false,TIMER,1792218268169
-T10,User Authentication Module,168,,T9,false,TIMER,1790231068169
-T11,Payment Processing Integration,336,,T10,false,TIMER,1790835868169
-T12,Gamification Mechanics,336,,T9,false,TIMER,1790835868169
-T13,Experience Point Engine,168,,T12,false,TIMER,1790231068169
-T14,Dashboard UI Development,720,,T3;T9,false,TIMER,1792218268169
-T15,Dark Mode Aesthetic,72,,T14,false,TIMER,1789885468169
-T16,Hover Animations & Polishing,168,,T14,false,TIMER,1790231068169
-T17,Unit Testing Setup,168,,T9,false,TIMER,1790231068169
-T18,Integration Testing,336,,T17;T10;T11,false,TIMER,1790835868169
-T19,Vulnerability & Pen Testing,336,,T18,false,TIMER,1790835868169
-T20,Bug Fixing & Patching,168,,T19,false,TIMER,1790231068169
-T21,Seed Funding Meetings,720,,T5,false,TIMER,1792218268169
-T23,Trademark Registration,720,,T22,false,TIMER,1792218268169
-T24,Marketing Strategy Plan,168,,T2,false,TIMER,1790231068169
-T25,Social Media Teasers,168,,T24,false,TIMER,1790231068169
-T26,Landing Page Launch,72,,T14;T24,false,TIMER,1789885468169
-T27,Email List Building,336,,T26,false,TIMER,1790835868169
-T28,Beta User Onboarding,168,,T18;T26,false,TIMER,1790231068169
-T29,Beta Feedback Collection,168,,T28,false,TIMER,1790231068169
-T30,Iterative UI Improvements,168,,T29;T16,false,TIMER,1790231068169
-T31,Performance Optimization,336,,T30,false,TIMER,1790835868169
-T32,Containerization (Docker),168,,T31,false,TIMER,1790231068169
-T33,CI/CD Pipeline Creation,168,,T32,false,TIMER,1790231068170
-T34,Staging Deployment,72,,T33,false,TIMER,1789885468170
-T35,Production Environment Setup,168,,T34,false,TIMER,1790231068170
-T36,Final QA Sign-off,72,,T35,false,TIMER,1789885468170
-T37,Press Release Distribution,72,,T24;T36,false,TIMER,1789885468170
-T38,Product Hunt Launch,72,,T36;T27,false,TIMER,1789885468170
-T39,Live Demo Day Presentation,72,,T38;T21,false,TIMER,1789885468170
-T40,Post-Launch Analytics Review,168,,T39,false,TIMER,1790231068170
+T1Market Research5noneTRUENONE0
+T2Competitor Analysis3T1FALSENONE0
+T3Project Charter2T1FALSENONE0
+T4Stakeholder Interviews4T3FALSENONE0
+T5Budget Estimation3T2;T4FALSENONE0
+T6Resource Allocation2T5FALSENONE0
+T7Risk Assessment3T5FALSENONE0
+T8Legal Compliance Check4T3FALSENONE0
+T9Security Policy Draft3T8FALSENONE0
+T10Architecture Blueprint6T6;T7;T9TRUENONE0
+T11Database Selection3T10FALSENONE0
+T12ER Diagram Design4T11FALSENONE0
+T13Schema Normalization2T12FALSENONE0
+T14Data Security Review3T13FALSENONE0
+T15ORM Setup2T14FALSENONE0
+T16Migration Scripts3T15FALSENONE0
+T17Core Backend Framework5T10FALSENONE0
+T18Authentication Module4T17TRUENONE0
+T19Authorization Engine3T18FALSENONE0
+T20User Management API3T19FALSENONE0
+T21Logging Service2T17FALSENONE0
+T22Error Handling Framework2T21FALSENONE0
+T23Configuration Manager2T17FALSENONE0
+T24API Gateway Setup4T20;T22;T23TRUENONE0
+T25Caching Layer Redis3T24FALSENONE0
+T26Message Queue Setup4T24FALSENONE0
+T27Email Notification Service3T24FALSENONE0
+T28SMS Service Integration3T27FALSENONE0
+T29Push Notification Hub3T27FALSENONE0
+T30Third-Party API Wrappers4T24FALSENONE0
+T31Payment Gateway Core5T30TRUENONE0
+T32Stripe Integration3T31FALSENONE0
+T33PayPal Integration3T31FALSENONE0
+T34Subscription Management4T32;T33FALSENONE0
+T35Invoice Generation3T34FALSENONE0
+T36Tax Calculation Engine3T35FALSENONE0
+T37Reporting Dashboard API4T36FALSENONE0
+T38Analytics Pipeline5T37TRUENONE0
+T39File Storage Service3T24FALSENONE0
+T40Image Compression Tool2T39FALSENONE0
+T41Document Parser4T39FALSENONE0
+T42Search Engine Indexing5T38;T41TRUENONE0
+T43Frontend Architecture4T10FALSENONE0
+T44UI Component Library5T43FALSENONE0
+T45Design System Tokens2T44FALSENONE0
+T46Routing Configuration3T43FALSENONE0
+T47State Management Setup4T46FALSENONE0
+T48Landing Page UI3T45;T47FALSENONE0
+T49User Dashboard View5T47FALSENONE0
+T50Admin Panel Layout4T49TRUENONE0
+T51Settings Interface3T49FALSENONE0
+T52Profile Management UI3T51FALSENONE0
+T53Checkout Screen UI4T34;T47FALSENONE0
+T54Payment Form Frontend3T53FALSENONE0
+T55Order History View3T53FALSENONE0
+T56Analytics Charts UI4T38;T47FALSENONE0
+T57Notification Center UI3T29;T47FALSENONE0
+T58File Uploader Component3T39;T47FALSENONE0
+T59Search Interface3T42;T47FALSENONE0
+T60Dark Mode Theme Toggle2T45FALSENONE0
+T61Accessibility Audit3T60FALSENONE0
+T62Responsive Design Pass4T61FALSENONE0
+T63Unit Test Framework3T17FALSENONE0
+T64Backend Unit Tests5T63;T20FALSENONE0
+T65Integration Tests4T64FALSENONE0
+T66Frontend Unit Tests3T47FALSENONE0
+T67E2E Testing Setup4T65;T66TRUENONE0
+T68Cypress Test Scripts5T67FALSENONE0
+T69Performance Benchmarking4T65FALSENONE0
+T70Load Testing Scripts4T69FALSENONE0
+T71Stress Testing3T70FALSENONE0
+T72Vulnerability Scanning3T9FALSENONE0
+T73Penetration Testing4T72FALSENONE0
+T74Bug Fixing Sprint 15T65;T68FALSENONE0
+T75Bug Fixing Sprint 24T74FALSENONE0
+T76Code Refactoring4T75FALSENONE0
+T77Docker Containerization4T24;T43TRUENONE0
+T78Docker Compose Setup3T77FALSENONE0
+T79CI Pipeline GitHub Actions4T78FALSENONE0
+T80CD Pipeline Scripting4T79FALSENONE0
+T81Staging Environment Setup5T80TRUENONE0
+T82Staging Deployment3T81FALSENONE0
+T83Staging Smoke Tests3T82FALSENONE0
+T84Production Server Setup5T81TRUENONE0
+T85SSL Certificate Installation2T84FALSENONE0
+T86DNS Configuration2T84FALSENONE0
+T87Domain Routing2T86FALSENONE0
+T88Database Migration Prod4T16;T84TRUENONE0
+T89Production Secrets Config3T84FALSENONE0
+T90Backend Prod Deployment5T88;T89TRUENONE0
+T91Frontend Prod Build4T62;T80FALSENONE0
+T92CDN Setup3T91FALSENONE0
+T93Frontend Prod Deployment4T91;T92TRUENONE0
+T94Post-Deployment Verification3T90;T93FALSENONE0
+T95Sanity Checks2T94FALSENONE0
+T96Monitoring Setup Datadog4T90FALSENONE0
+T97Error Tracking Sentry3T90FALSENONE0
+T98Team Handover Documentation4T76FALSENONE0
+T99Client Training3T95FALSENONE0
+T100Project Sign-off2T98;T99TRUENONE0

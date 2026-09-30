@@ -1,0 +1,30 @@
+T1,Initialize Project Repo,5,,none,true,NONE,0
+T2,Define Security Protocols,12,,T1,true,NONE,0
+T3,Setup Cloud Infrastructure,24,,T1,true,NONE,0
+T4,Database Schema Migration,48,,T3,false,TIMER,0
+T5,Frontend Dashboard Wireframes,12,,T1,false,TIMER,0
+T6,Backend API Architecture,72,,T3,false,TIMER,0
+T7,Integrate OpenAI Models,168,,T6,false,TIMER,0
+T8,Train Custom AI Agents,336,,T7,false,TIMER,0
+T9,Develop Frontend UI Components,48,,T5,false,TIMER,0
+T10,Connect Frontend to Backend API,72,,T6;T9,false,TIMER,0
+T11,AI Response Caching System,48,,T7,false,TIMER,0
+T12,Database Encryption Pass,72,,T4,false,TIMER,0
+T13,Implement OAuth2 Authentication,72,,T6,false,TIMER,0
+T14,Role-Based Access Control,48,,T13,false,TIMER,0
+T15,Penetration Testing (Security),168,,T12;T14,false,TIMER,0
+T16,Fix Critical Security Vulnerabilities,72,,T15,false,TIMER,0
+T17,Optimize AI Token Usage,48,,T8;T11,false,TIMER,0
+T18,Load Testing & Server Scaling,72,,T17;T10,false,TIMER,0
+T19,Write API Documentation,24,,T10,false,TIMER,0
+T20,Draft User Privacy Policy,12,,T14,false,TIMER,0
+T21,Legal Compliance Review (Security),48,,T20,false,TIMER,0
+T22,Final QA Full System Test,168,,T16;T18,false,TIMER,0
+T23,Staging Environment Deployment,24,,T22,false,TIMER,0
+T24,Client UAT (User Acceptance),72,,T23,false,TIMER,0
+T25,Address UAT Feedback,48,,T24,false,TIMER,0
+T26,Production Database Lock,12,,T25,false,TIMER,0
+T27,Production Server Launch,12,,T26,false,TIMER,0
+T28,Post-Launch Monitoring,168,,T27,false,TIMER,0
+T29,Marketing Announce AI Feature,24,,T27,false,TIMER,0
+T30,Project Retrospective,5,,T28;T29,false,NONE,0

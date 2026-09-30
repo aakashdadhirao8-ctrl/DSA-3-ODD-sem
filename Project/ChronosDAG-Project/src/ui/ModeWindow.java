@@ -6,44 +6,85 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
 
 public class ModeWindow extends JFrame {
     public ModeWindow(User user) {
-        setTitle("Select Mode - Welcome " + user.username);
-        setSize(700, 400);
+        setTitle("Project Hub - Welcome " + user.username);
+        setSize(750, 450);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-        
-        JPanel mainPanel = new JPanel(new GridLayout(1, 2, 20, 20));
-        mainPanel.setBorder(BorderFactory.createEmptyBorder(40, 40, 40, 40));
-        add(mainPanel);
+        setLayout(new BorderLayout());
 
-        GraphEngine testEngine = new GraphEngine();
-        boolean hasSavedProject = testEngine.loadGraphFromCSV(user.username);
+        JPanel centerPanel = new JPanel(new GridLayout(1, 2, 20, 20));
+        centerPanel.setBorder(BorderFactory.createEmptyBorder(30, 40, 10, 40));
+        centerPanel.setBackground(new Color(18, 18, 18));
 
-        // Big UI Card 1
-        JButton btnOverwatch = createModeCard(
-            "OVERWATCH", "Enterprise Analytics", 
+        // 1. Upload / Select CSV Button Card
+        JButton btnUpload = createHubCard(
+            "📂 UPLOAD PROJECT CSV", "Select a task file from your system", 
             new Color(30, 30, 30), new Color(45, 45, 45), new Color(0, 200, 255)
         );
-        btnOverwatch.addActionListener(e -> launchMode(user, "OVERWATCH", hasSavedProject, testEngine));
+        btnUpload.addActionListener(e -> promptFileSelection(user));
 
-        // Big UI Card 2
-        JButton btnOverdrive = createModeCard(
-            "OVERDRIVE", "Gamified Campaign", 
+        // 2. Build New Project Card
+        JButton btnNew = createHubCard(
+            "➕ BUILD NEW PROJECT", "Create a task graph manually", 
             new Color(40, 15, 60), new Color(70, 25, 100), new Color(255, 215, 0)
         );
-        btnOverdrive.addActionListener(e -> launchMode(user, "OVERDRIVE", hasSavedProject, testEngine));
+        btnNew.addActionListener(e -> {
+            String[] modes = {"OVERWATCH", "OVERDRIVE"};
+            String mode = (String) JOptionPane.showInputDialog(this, "Select Dashboard Mode:", "New Project", 
+                JOptionPane.QUESTION_MESSAGE, null, modes, modes[0]);
+            if (mode != null) {
+                new TaskInputUI(user, mode).setVisible(true);
+                dispose();
+            }
+        });
 
-        mainPanel.add(btnOverwatch);
-        mainPanel.add(btnOverdrive);
+        centerPanel.add(btnUpload);
+        centerPanel.add(btnNew);
+        add(centerPanel, BorderLayout.CENTER);
+
+        // Bottom user info & logout
+        JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, 20, 15));
+        bottomPanel.setBackground(new Color(18, 18, 18));
+        JLabel lblUser = new JLabel("Logged in as: " + user.username + " (Level " + user.level + ")");
+        lblUser.setForeground(Color.GRAY);
+        JButton btnLogout = new JButton("LOGOUT");
+        btnLogout.addActionListener(e -> { new AuthWindow().setVisible(true); dispose(); });
+        bottomPanel.add(lblUser);
+        bottomPanel.add(btnLogout);
+        add(bottomPanel, BorderLayout.SOUTH);
     }
 
-    private JButton createModeCard(String title, String sub, Color defaultBg, Color hoverBg, Color accent) {
-        // Using HTML to format the large card text cleanly
+    private void promptFileSelection(User user) {
+        JFileChooser chooser = new JFileChooser();
+        chooser.setCurrentDirectory(new File(System.getProperty("user.dir")));
+        int result = chooser.showOpenDialog(this);
+        if (result == JFileChooser.APPROVE_OPTION) {
+            File selectedFile = chooser.getSelectedFile();
+            GraphEngine engine = new GraphEngine();
+            if (engine.loadCustomCSV(selectedFile)) {
+                String[] modes = {"OVERWATCH", "OVERDRIVE"};
+                String mode = (String) JOptionPane.showInputDialog(this, "Project Loaded (" + engine.taskMap.size() + " tasks). Choose Mode:", "Launch", 
+                    JOptionPane.QUESTION_MESSAGE, null, modes, modes[0]);
+                
+                if (mode != null) {
+                    if (mode.equals("OVERWATCH")) new OverwatchUI(user, engine).setVisible(true);
+                    else new OverdriveUI(user, engine).setVisible(true);
+                    dispose();
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "Failed to parse CSV file. Please verify structure.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }
+
+    private JButton createHubCard(String title, String sub, Color defaultBg, Color hoverBg, Color accent) {
         String html = String.format("<html><div style='text-align: center;'>" +
-                "<h1 style='color: rgb(%d,%d,%d); font-size: 24px; margin-bottom: 5px;'>%s</h1>" +
-                "<p style='color: white; font-size: 14px;'>%s</p>" +
+                "<h2 style='color: rgb(%d,%d,%d); font-size: 18px; margin-bottom: 8px;'>%s</h2>" +
+                "<p style='color: white; font-size: 13px;'>%s</p>" +
                 "</div></html>", accent.getRed(), accent.getGreen(), accent.getBlue(), title, sub);
                 
         JButton btn = new JButton(html);
@@ -62,23 +103,5 @@ public class ModeWindow extends JFrame {
             }
         });
         return btn;
-    }
-
-    private void launchMode(User user, String mode, boolean hasSavedProject, GraphEngine engine) {
-        if (hasSavedProject) {
-            int choice = JOptionPane.showOptionDialog(this, 
-                "You have a saved project. Do you want to continue it?", 
-                "Project Found", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, 
-                null, new String[]{"Continue Saved Project", "Start New Project"}, "Continue Saved Project");
-            
-            if (choice == JOptionPane.YES_OPTION) {
-                if (mode.equals("OVERWATCH")) new OverwatchUI(user, engine).setVisible(true);
-                else new OverdriveUI(user, engine).setVisible(true);
-                dispose();
-                return;
-            }
-        }
-        new TaskInputUI(user, mode).setVisible(true);
-        dispose();
     }
 }
